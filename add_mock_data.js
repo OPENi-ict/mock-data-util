@@ -10,78 +10,78 @@ var profiles  = require('./data/mock_profiles_array.json')
 var location  = require('./data/mock_location_label_array.json')
 
 
-var api_key = "a3361a7b4f3d1f127b9d9bec15bfb695"
-var secret  = "63394b367e65f74d028e32f3f9aac75c8747c5c8ba42aec3a3c18873e9a16ea6"
+var api_key = "b2508a179f0bdcef720cb82cd734607b"
+var secret  = "ce3dcb9ea11e7d4f433498726073e24c682dc9bba7131e72cf24b2e672fe873f"
 
-var profile_type_id  = "t_bd7d5d80c2cec56296c1fe8895e52114-710"
-var location_type_id = "t_ca3fae489fc9d2d580547a4f4fa0871c-374"
+var profile_type_id  = "t_0089629cf3a842e5450f24cd0f5a5adf-744"
+var location_type_id = "t_0230624bee7e2578b688b2dc15d1aee6-389"
 
 var permissions
 
 var profile_type  = {
-   "@reference": "Mock Profile",
+   "@reference": "Mock User Profile",
    "@context": [
       {
          "@property_name": "first_name",
          "@openi_type": "string",
          "@multiple": false,
          "@required": true,
-         "@context_id": "first_name"
+         "@context_id": "First Name"
       },
       {
          "@property_name": "last_name",
          "@openi_type": "string",
          "@multiple": false,
          "@required": true,
-         "@context_id": "last_name"
+         "@context_id": "Last Name"
       },
       {
          "@property_name": "email",
          "@openi_type": "string",
          "@multiple": false,
          "@required": true,
-         "@context_id": "email"
+         "@context_id": "Email Address"
       },
       {
          "@property_name": "city",
          "@openi_type": "string",
          "@multiple": false,
          "@required": true,
-         "@context_id": "city"
+         "@context_id": "Current City"
       },
       {
          "@property_name": "country",
          "@openi_type": "string",
          "@multiple": false,
          "@required": true,
-         "@context_id": "country"
+         "@context_id": "Current Country"
       },
       {
          "@property_name": "employer",
          "@openi_type": "string",
          "@multiple": false,
          "@required": true,
-         "@context_id": "employer"
+         "@context_id": "Employer Name"
       }
    ]
 }
 
 var location_type = {
-   "@reference": "Mock Location Object",
+   "@reference": "Location Game Checkin",
    "@context": [
       {
          "@property_name": "label",
          "@openi_type": "string",
          "@multiple": false,
          "@required": true,
-         "@context_id": "label"
+         "@context_id": "Checking Point Label"
       },
       {
          "@property_name": "lat",
          "@openi_type": "float",
          "@multiple": false,
          "@required": true,
-         "@context_id": "latitude "
+         "@context_id": "Latitude"
       },
       {
          "@property_name": "long",
@@ -196,7 +196,7 @@ var create_user_auth_and_create_objs = function(p, user, i){
       //console.log(permissions)
 
 
-      return request.post('/api/v1/permissions')
+      return request.post('/api/v1/permissions/' + api_key)
          .send(permissions)
          .set('Accept', 'application/json')
          .set('Authorization', token)
