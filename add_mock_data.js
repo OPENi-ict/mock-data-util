@@ -5,6 +5,7 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 var supertest = require('supertest-as-promised');
 var request   = supertest('https://dev.openi-ict.eu');
+var inter_request   = supertest('https://dev.openi-ict.eu:8443');
 var assert    = require('chai').assert;
 var profiles  = require('./data/mock_profiles_array.json')
 var location  = require('./data/mock_location_label_array.json')
@@ -193,10 +194,7 @@ var create_user_auth_and_create_objs = function(p, user, i){
 
    it('Should persist user permissions ' + p["email"], function () {
 
-      //console.log(permissions)
-
-
-      return request.post('/api/v1/permissions/' + api_key)
+      return inter_request.post('/api/v1/permissions/' + api_key)
          .send(permissions)
          .set('Accept', 'application/json')
          .set('Authorization', token)
