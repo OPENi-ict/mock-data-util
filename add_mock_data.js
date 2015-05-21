@@ -179,7 +179,7 @@ var create_user_auth_and_create_objs = function(p, user, i){
 
 
    it('Should get latest app permissions ' + api_key, function () {
-      return request.get("/api/v1/app_permissions_latest/" + api_key)
+      return inter_request.get("/api/v1/app_permissions_latest/" + api_key)
          .set('Accept', 'application/json')
          .set('Authorization', token)
          //.expect('content-type', 'application/json; charset=utf-8')
