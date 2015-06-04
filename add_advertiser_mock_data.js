@@ -153,7 +153,7 @@ var create_user_auth_and_create_objs = function(p, user, i){
             }
         }
 
-        it('Should persist Location Object ' + con["label"], function (obj) {
+        it('Should persist Context Object ' + con["label"], function (obj) {
             return function () {
                 this.timeout(10000);
                 return request.post('/api/v1/objects')
