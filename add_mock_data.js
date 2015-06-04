@@ -11,8 +11,8 @@ var profiles  = require('./data/mock_profiles_array.json')
 var location  = require('./data/mock_location_label_array.json')
 
 
-var api_key = "b2508a179f0bdcef720cb82cd734607b"
-var secret  = "ce3dcb9ea11e7d4f433498726073e24c682dc9bba7131e72cf24b2e672fe873f"
+var api_key = "989921979aca912e04290eaf01f27641"
+var secret  = "d63c61af6637b0332e10b9fcfa433f301a20aefc8c92c0a5cdcac17030c58b89"
 
 var profile_type_id  = "t_0089629cf3a842e5450f24cd0f5a5adf-744"
 var location_type_id = "t_0230624bee7e2578b688b2dc15d1aee6-389"

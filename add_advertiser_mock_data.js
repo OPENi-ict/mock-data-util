@@ -5,15 +5,16 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 var supertest = require('supertest-as-promised')
 var request   = supertest('https://dev.openi-ict.eu')
 var inter_request   = supertest('https://dev.openi-ict.eu:8443')
-var assert    = require('chai').assert
-var profiles  = require('./data/mock_profiles_array.json')
-var context  = require('./data/mock_contexts_array.json')
+var assert          = require('chai').assert
+var profiles        = require('./data/mock_profiles_array.json')
+var context         = require('./data/mock_contexts_array.json')
 
-var api_key = "b2508a179f0bdcef720cb82cd734607b"
-var secret  = "ce3dcb9ea11e7d4f433498726073e24c682dc9bba7131e72cf24b2e672fe873f"
+var api_key = "33d2cb8514589acf595321a9217182cb"
+var secret  = "3e8d82d909b1c5f33dfea1f7e8e3f977ac7c01c2c8c10912313f4a5194b5c115"
 
 var profile_type_id  = "t_0089629cf3a842e5450f24cd0f5a5adf-744"
-var context_type_id = "t_6a8dcdb4929dfc485220e07a4746f517-20049"
+//var context_type_id  = "t_6a8dcdb4929dfc485220e07a4746f517-20049"
+var context_type_id  = "t_4eae91f6a0250220dee70ded82c2ae4c-19926"
 
 var permissions
 
@@ -146,14 +147,10 @@ var create_user_auth_and_create_objs = function(p, user, i){
 
         var context_obj = {
             "@openi_type": context_type_id,
-            "@data"      : {
-                "label": con.label,
-                "lat"  : con.lat,
-                "long" : con.long
-            }
+            "@data"      : con
         }
 
-        it('Should persist Context Object ' + con["label"], function (obj) {
+        it('Should persist Context Object ... ' + context_obj["@data"]["id"], function (obj) {
             return function () {
                 this.timeout(10000);
                 return request.post('/api/v1/objects')
