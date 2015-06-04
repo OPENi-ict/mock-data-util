@@ -9,8 +9,8 @@ var assert    = require('chai').assert
 var profiles  = require('./data/mock_profiles_array.json')
 var context  = require('./data/mock_contexts_array.json')
 
-var api_key = '622d7731fdebdf8c19c7987e2a991829' // "b2508a179f0bdcef720cb82cd734607b"
-var secret  = '37a5ace65310655f9da1a6787e150be27479522b83c95274f8a4d057ab59a5b9' // "ce3dcb9ea11e7d4f433498726073e24c682dc9bba7131e72cf24b2e672fe873f"
+var api_key = "b2508a179f0bdcef720cb82cd734607b"
+var secret  = "ce3dcb9ea11e7d4f433498726073e24c682dc9bba7131e72cf24b2e672fe873f"
 
 var profile_type_id  = "t_0089629cf3a842e5450f24cd0f5a5adf-744"
 var context_type_id = "t_6a8dcdb4929dfc485220e07a4746f517-20049"
