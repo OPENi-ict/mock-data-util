@@ -137,12 +137,12 @@ var create_user_auth_and_create_objs = function(p, user, i){
     })
 
 
-    for (var j = 10*i; j < 10*i + 10; j++) {
+    //for (var j = 10*i; j < 10*i + 10; j++) {
 
-        var con = context[j]
+        var con = context[i]
 
         if (undefined === con){
-            continue
+            return //continue
         }
 
         var context_obj = {
@@ -165,17 +165,15 @@ var create_user_auth_and_create_objs = function(p, user, i){
             }
 
         }(context_obj))
-    }
+
+    //}
 
 }
 
 
 describe('Create Profiles', function () {
-    //for (var i = 0; i < 1; i++) {
-    for (var i = 0; i < profiles.length; i++) {
-        var p      = profiles[i]
-        var user   = {username:p["email"], password:p["email"]}
-
+    profiles.forEach(function (p, i) {
+        var user = { username:p["email"], password:p["email"] }
         create_user_auth_and_create_objs(p, user, i)
-    }
+    })
 })
