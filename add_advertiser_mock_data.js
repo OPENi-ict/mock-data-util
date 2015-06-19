@@ -6,8 +6,8 @@ var supertest = require('supertest-as-promised')
 var request   = supertest('https://dev.openi-ict.eu')
 var inter_request   = supertest('https://dev.openi-ict.eu:8443')
 var assert          = require('chai').assert
-var profiles        = require('./data/mock_profiles_array.json') //require('./data/mock_profiles_array_b.json')
-var context         = require('./data/mock_contexts_array.json') //require('./data/mock_contexts_array_b.json')
+var profiles        = require('./data/mock_profiles_array_b.json') // require('./data/mock_profiles_array.json')
+var context         = require('./data/mock_contexts_array_b.json') // require('./data/mock_contexts_array.json')
 
 var api_key = "33d2cb8514589acf595321a9217182cb"
 var secret  = "3e8d82d909b1c5f33dfea1f7e8e3f977ac7c01c2c8c10912313f4a5194b5c115"
